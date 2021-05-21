@@ -1,0 +1,129 @@
+body {
+  overflow: auto;
+  padding-bottom: 100px;
+  position: relative;
+}
+
+.slide {
+  position: relative;
+}
+
+.slide a {
+  text-decoration: none;
+  color: #000;
+}
+
+.navBut {
+  display: flex;
+  align-items: center;
+  top: calc(100vh - var(--marginT));
+  left: 50vw;
+  transform: translate(-50%, -100%);
+}
+
+.navBut .scrollBtn {
+  height: 40px;
+  width: 40px;
+  margin: 0 10px;
+}
+
+.overlay .homeBut {
+  height: 30px;
+  width: 30px;
+}
+
+.overlay .homeBut img {
+  height: 40%;
+  width: 40%;
+}
+
+.red {
+  background-color: orangered;
+}
+
+.imgProject {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.imgProject img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  /* opacity: 50%; */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  background: #35363a;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  z-index: 1000;
+}
+
+body.right::before {
+  transform-origin: 0% 0;
+}
+
+body.left::before {
+  transform-origin: 100% 0;
+}
+
+body.transition.right::before {
+  transform-origin: 100% 0;
+  transform: scaleX(1);
+}
+body.transition.left::before {
+  transform-origin: 0% 0;
+  transform: scaleX(1);
+}
+
+article {
+  margin: 0 var(--marginR);
+  padding: 0 var(--marginR);
+}
+
+article .articleTitle {
+  font-family: "CELEBRATE RETRO";
+  text-transform: uppercase;
+  font-size: clamp(15px, 7vmin, 10vw);
+  margin-top: 120px;
+  margin-bottom: 30px;
+}
+
+article .articleTitle:nth-of-type(2n) {
+  text-align: end;
+}
+
+article .articleText {
+  font-family: "Avenir LT Std";
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 115%;
+  margin-top: 20px;
+  margin-right: var(--marginR);
+}
+
+article .articleImg {
+  margin: 0 auto;
+  margin: 40px 0;
+  width: 100%;
+  height: 500px;
+}
+
+article .articleImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

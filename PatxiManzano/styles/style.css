@@ -1,0 +1,440 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.mainPage {
+  background: var(--themeBackgroundColor);
+  transition: background 0.5s ease;
+}
+
+.mainPage.dark {
+  background: #282828;
+  transition: background 0.5s ease;
+}
+
+.mainPage.theme {
+  background: #ec9d9d;
+  transition: background 0.5s ease;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100vh;
+  height: 100vw;
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  overflow-x: auto;
+  scroll-snap-type: y proximity;
+  -webkit-scroll-snap-type: y proximity;
+
+  -ms-overlow-style: none;
+  scrollbar-width: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.blocHorizontal {
+  display: flex;
+  flex-direction: row;
+  width: 400vw;
+  transform: rotate(90deg) translateY(-100vh);
+  transform-origin: top left;
+}
+
+.overlay {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: "Avenir LT Std";
+  font-size: 20px;
+  z-index: 100;
+  color: var(--textColor);
+}
+
+.overlay > div {
+  position: absolute;
+  opacity: 70%;
+  z-index: 5;
+}
+
+.overlay > div:nth-child(1) {
+  opacity: 100%;
+  top: var(--marginT);
+  left: var(--marginR);
+}
+
+.overlay > div:nth-child(2) {
+  top: var(--marginT);
+  right: var(--marginR);
+}
+
+.overlay > div:nth-child(3) {
+  top: calc(100vh - var(--marginT));
+  right: var(--marginR);
+  transform: translateY(-100%);
+}
+
+.overlay > div:nth-child(4) {
+  top: calc(100vh - var(--marginT));
+  left: var(--marginR);
+  transform: translateY(-100%);
+}
+
+.overlay > div:nth-child(5) {
+  top: 50vh;
+  right: var(--marginR);
+  transform: translateY(-50%);
+}
+
+.overlay > div:nth-child(6) {
+  /* display: flex;
+  top: calc(100vh - var(--marginT));
+  height: 30px;
+  left: 50vw;
+  transform: translate(-50%, -100%); */
+}
+
+.overlay > div:nth-child(6) > div:first-child {
+  display: flex;
+  top: calc(100vh - var(--marginT));
+  left: 50vw;
+  transform: rotate(180deg) translateY(0vh);
+}
+
+.overlay a {
+  text-decoration: none;
+  color: var(--textColor);
+}
+
+.overlay > * {
+  font-size: clamp(15px, 4vmin, 1.5vw);
+}
+
+footer {
+  bottom: 0;
+}
+
+footer > div > a {
+  margin-left: 2vw;
+}
+
+.slide {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  padding: var(--marginT) var(--marginR);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 100px;
+  font-family: "CELEBRATE RETRO";
+  scroll-snap-align: start;
+  -webkit-scroll-snap-align: start;
+}
+
+.pixelScroll {
+  width: 1px;
+  height: 100vh;
+  background: cornflowerblue;
+}
+
+.slide > .linkHover {
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: auto;
+  z-index: 5;
+}
+
+.numberContainer {
+  display: flex;
+  align-items: center;
+  font-size: clamp(9vmin, 16vmax, 12vmin);
+}
+
+.overlay .scrollBtn {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  right: 0;
+  border: 1.5px dashed var(--textColor);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  width: clamp(60px, 10vmin, 11vmin);
+  height: clamp(60px, 10vmin, 11vmin);
+  z-index: 20;
+}
+
+.overlay .scrollBtn::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  background: var(--themeBackgroundColor);
+  opacity: 0.3;
+}
+
+.overlay > .scrollBtn::after {
+  content: "Scroll";
+  font-family: "CELEBRATE RETRO";
+  text-transform: uppercase;
+  font-size: 60%;
+  color: var(--textColor);
+}
+
+.overlay .scrollBtn img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.overlay .scrollBtn img.scrollArrow {
+  /* width: 60%; */
+  height: 60%;
+  animation: moveArrow 4s ease-in-out infinite;
+}
+
+@keyframes moveArrow {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(-50%);
+  }
+  50% {
+    transform: translateX(-40%) translateY(-50%);
+  }
+}
+
+.title {
+  width: 100%;
+  font-weight: normal;
+  font-size: 20px;
+  font-size: clamp(15vmin, 25vmin, 15vw);
+  text-transform: uppercase;
+  color: var(--textColor);
+  margin-right: auto;
+}
+
+.title > div {
+  display: flex;
+  align-items: flex-end;
+}
+.title button {
+  margin-left: 2vw;
+  width: clamp(10vmin, 12vmin, 7vw);
+  margin-bottom: 3vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border: none;
+  background: none;
+  position: relative;
+  color: white;
+  z-index: 0;
+  outline: none;
+}
+
+.title button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: 0.1s;
+}
+
+.title button:hover::after {
+  content: "Flip";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--textColor);
+  font-family: "CELEBRATE RETRO";
+}
+
+.title .outcome {
+  width: 100%;
+  margin: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform: rotateY(0deg) rotateX(0deg);
+  transition: 1s;
+  color: #222;
+}
+.title .outcome.flip {
+  transition: 1s;
+  transform: rotateY(720deg) rotateX(720deg);
+}
+
+.text-line {
+  display: flex;
+  align-items: center;
+  background: crimson;
+  width: auto;
+  /* width: clamp(15vmin, 25vmin, 15vw); */
+  /* width: 35vw; */
+  height: auto;
+}
+
+.text-line text {
+  stroke: var(--textColor);
+}
+
+.slide > div:hover .text-line text {
+  stroke: var(--textColor);
+}
+
+.numberContainer .longDash {
+  width: 40vw;
+  height: 1px;
+  margin-left: 1vw;
+  background: var(--textColor);
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100vw;
+    height: 100vh;
+    transform: rotate(0deg) translateX(0vh);
+    transform-origin: auto;
+    overflow-x: hidden;
+  }
+
+  .blocHorizontal {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    transform: rotate(0deg) translateY(0vh);
+    transform-origin: auto;
+  }
+  .slide:nth-child(1) {
+    height: 100vh;
+  }
+  .slide {
+    height: 40vh;
+  }
+  .mouse_invert {
+    display: none;
+  }
+  .mouse_invert_cursor {
+    display: none;
+  }
+  .overlay {
+    /* height: 80%; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .overlay > div:first-child {
+    /* width: clamp(60px, 10vmin, 11vmin); */
+    /* height: clamp(60px, 10vmin, 11vmin); */
+  }
+  .overlay .scrollBtn {
+    transform: rotate(90deg);
+  }
+  .overlay .scrollBtn::after {
+    transform: rotate(-90deg);
+  }
+  .overlay > div:nth-child(5) {
+    top: auto;
+    bottom: var(--marginT);
+    right: 50%;
+    transform: translate(50%, 0%);
+  }
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: crimson;
+}
+
+.textStroke {
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--textColor);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.textFill {
+  color: var(--textColor);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--textColor);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+/* CURSOR */
+
+.cursor {
+  box-sizing: content-box;
+  /* z-index: 1000; */
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  transform: translate(-50%, -50%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  /* border: 2px solid var(--textColor); */
+  animation: borderAnim 4s ease-in-out infinite alternate;
+  pointer-events: none;
+  transition: all 0.4s ease-in-out;
+  transition-property: width, height, border-radius, border;
+}
+
+.hovered {
+  /* transform: scale(5); */
+
+  width: 300px;
+  height: 150px;
+}
+
+.clicked {
+  background-size: cover;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0%;
+  border: none;
+  animation: none;
+  /* transition: all 0.7s ease-in-out;
+  transition-property: top, left, border-radius; */
+}
+
+@keyframes borderAnim {
+  0% {
+    border-radius: 15% 10% 10% 11% / 10% 26% 22% 16%;
+  }
+
+  100% {
+    border-radius: 15% 10% 35% 23% / 43% 34% 29% 27%;
+  }
+}

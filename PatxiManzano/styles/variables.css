@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "CELEBRATE RETRO";
+  src: url("../assets/fonts/subset-CELEBRATERETRO-Regular.woff2")
+      format("woff2"),
+    url("../assets/fonts/subset-CELEBRATERETRO-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
+  src: url("../assets/fonts/subset-AvenirLTStd-Book.woff2") format("woff2"),
+    url("../assets/fonts/subset-AvenirLTStd-Book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --primaryColor: #fff9f4;
+  --primaryColor2: #fff5ec;
+  --themeBackgroundColor: #fff5ec;
+  --themeAccentColor: #fff5ec;
+  --secondaryColor: #353535;
+  --tertiaryColor: #404040;
+  --shadowColor: #cacaca;
+  --textColor: #000;
+  --textColor2: #4a4a4a;
+  --accent1: #00ffd2;
+  --marginT: 5vh;
+  --marginR: 5vw;
+}
+
+[data-theme="dark"] {
+  --primaryColor: #282828;
+  --primaryColor2: #323232;
+  --secondaryColor: #353535;
+  --tertiaryColor: #404040;
+  --shadowColor: #282828;
+  --textColor: #ffffff;
+  --textColor2: #cdcdcd;
+  --accent1: #00ffd2;
+  --marginT: 5vh;
+  --marginR: 5vw;
+}
