@@ -30,6 +30,7 @@
   --accent1: #00ffd2;
   --marginT: 5vh;
   --marginR: 5vw;
+  --transitionTitle: 0.5s;
 }
 
 [data-theme="dark"] {

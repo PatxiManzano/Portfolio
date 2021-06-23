@@ -33,7 +33,7 @@ for (i = 0; i < coinFlipButton.length; i++) {
 
       outcome.src = './assets/imgs/Frog2.png';
       if (colorTable[randomNumber].colorName == "dark") {
-        mainPage.style.background = colorTable[randomNumber].backgroundColor
+        mainPage2.style.background = colorTable[randomNumber].backgroundColor
         for (j = 0; j < outcome.length; j++) {
           outcome[j].src = './assets/imgs/Frog2.png';
         }
@@ -43,7 +43,7 @@ for (i = 0; i < coinFlipButton.length; i++) {
         }
       }
 
-      mainPage.style.background = colorTable[randomNumber].backgroundColor
+      mainPage2.style.background = colorTable[randomNumber].backgroundColor
       root.style.setProperty('--themeBackgroundColor', colorTable[randomNumber].backgroundColor);
       root.style.setProperty('--textColor', colorTable[randomNumber].accentColor);
 

@@ -202,19 +202,21 @@ footer > div > a {
   color: var(--textColor);
 }
 
-.overlay .scrollBtn img {
+.overlay .scrollBtn .scrollArrow {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.overlay .scrollBtn img.scrollArrow {
-  /* width: 60%; */
   height: 60%;
   animation: moveArrow 4s ease-in-out infinite;
+}
+
+.overlay .scrollBtn .scrollArrow svg {
+  /* width: 60%; */
+  height: 100%;
+  stroke: var(--textColor);
 }
 
 @keyframes moveArrow {
@@ -375,20 +377,20 @@ footer > div > a {
   color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--textColor);
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+  -webkit-transition: all var(--transitionTitle) ease-out;
+  -moz-transition: all var(--transitionTitle) ease-out;
+  -o-transition: all var(--transitionTitle) ease-out;
+  transition: all var(--transitionTitle) ease-out;
 }
 
 .textFill {
   color: var(--textColor);
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--textColor);
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+  -webkit-transition: all var(--transitionTitle) ease-out;
+  -moz-transition: all var(--transitionTitle) ease-out;
+  -o-transition: all var(--transitionTitle) ease-out;
+  transition: all var(--transitionTitle) ease-out;
 }
 
 /* CURSOR */

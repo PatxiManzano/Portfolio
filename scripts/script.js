@@ -24,7 +24,7 @@ console.log(colorSelectSave);
 if (colorSelectSave != null) {
   const backgroundColor = colorTable.find(search => search.colorName == colorSelectSave ).backgroundColor
   const accentColor = colorTable.find(search => search.colorName == colorSelectSave ).accentColor
-  mainPage.style.background = backgroundColor
+  mainPage2.style.background = backgroundColor
   root.style.setProperty('--themeBackgroundColor', backgroundColor);
   root.style.setProperty('--textColor', accentColor);
 }
