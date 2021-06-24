@@ -29,5 +29,17 @@ let dataProjects = [
   {
     title: "A la maniere",
     imgPath: "./assets/imgs/ALaManiereDe.png",
-  }
+  },
+  {
+    title: "La socquette",
+    imgPath: "./assets/imgs/LaSoquette.png",
+  },
+  {
+    title: "On The Moon",
+    imgPath: "./assets/imgs/OnTheMoon.png",
+  },
+  {
+    title: "Agora",
+    imgPath: "./assets/imgs/Agora.png",
+  },
 ]
