@@ -41,5 +41,5 @@ let dataProjects = [
   {
     title: "Agora",
     imgPath: "./assets/imgs/Agora.png",
-  },
+  }
 ]
