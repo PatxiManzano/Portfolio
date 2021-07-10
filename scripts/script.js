@@ -6,6 +6,7 @@ const date_elem = document.querySelector(".date")
 const pointer_elem = document.querySelector(".mouse_invert")
 const pointer_cursor_elem = document.querySelector(".mouse_invert_cursor")
 const cursor = document.querySelector('.cursor');
+const scrollBtn = document.querySelector('.scrollBtn');
 
 const clickable_things_elem = document.querySelectorAll(".clickable")
 const title = document.querySelectorAll(".title")
@@ -101,6 +102,12 @@ for(i = 0; i<titleHover.length; i++) {
 // INFINITE SCROLL
 
 container.addEventListener("scroll", () => {
+  if (container.scrollTop >= 60 && container.scrollTop <= container.scrollHeight - window.innerWidth - 60) {
+    scrollBtn.classList.add('scroll');
+      setTimeout(function(){
+        // scrollBtn.style.display = "none"
+      }, 1000);    
+  }
   if(container.scrollTop >= container.scrollHeight - window.innerWidth) {
     container.scrollTo(0, 1);
   }

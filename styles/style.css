@@ -183,6 +183,14 @@ footer > div > a {
   z-index: 20;
 }
 
+.overlay .scrollBtn {
+  transition: opacity 1s ease-in-out;
+}
+.overlay .scrollBtn.scroll {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
 .overlay .scrollBtn::before {
   content: "";
   width: 100%;
@@ -208,7 +216,7 @@ footer > div > a {
   height: 100%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   height: 60%;
   animation: moveArrow 4s ease-in-out infinite;
 }
@@ -222,10 +230,10 @@ footer > div > a {
 @keyframes moveArrow {
   0%,
   100% {
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-58%) translateY(-50%);
   }
   50% {
-    transform: translateX(-40%) translateY(-50%);
+    transform: translateX(-52%) translateY(-50%);
   }
 }
 
