@@ -10,7 +10,16 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body class="mainPage">
-    <div class="cursor"></div>
+    <div class="cursor">
+      <div class="textCursor">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+          <path id="curve" d="M50 24.1343C50 37.8673 38.8071 49 25 49C11.1929 49 0 37.8673 0 24.1343C0 10.4014 11.1929 0 25 0C38.8071 0 50 10.4014 50 24.1343Z"/>
+          <text x="10">
+            <textPath xlink:href="#curve">| Ceci est un curseur</textPath>
+          </text>
+        </svg>      
+      </div>
+    </div>
     <header class="overlay">
       <div>
         <h3>Patxi Manzano</h3>

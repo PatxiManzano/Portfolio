@@ -6,6 +6,7 @@ const date_elem = document.querySelector(".date")
 const pointer_elem = document.querySelector(".mouse_invert")
 const pointer_cursor_elem = document.querySelector(".mouse_invert_cursor")
 const cursor = document.querySelector('.cursor');
+const textCursor = document.querySelector('.textCursor');
 const scrollBtn = document.querySelector('.scrollBtn');
 
 const clickable_things_elem = document.querySelectorAll(".clickable")
@@ -135,3 +136,5 @@ window.onload = Scrolldown()
 //       // container.scroll(0,container.scrollTop + event.deltaX*5); 
 //     }
 // });
+
+
